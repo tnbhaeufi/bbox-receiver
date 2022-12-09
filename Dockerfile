@@ -66,7 +66,7 @@ RUN set -xe; \
 
 # NOALBS 2
 #
-ARG NOALBS_VERSION=v2.5.5
+ARG NOALBS_VERSION=v2.7.3
 RUN set -xe; \
     git clone https://github.com/715209/nginx-obs-automatic-low-bitrate-switching /app; \
     cd /app; \
@@ -103,6 +103,7 @@ COPY files/sls.conf /etc/sls/sls.conf
 COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY files/logprefix /usr/local/bin/logprefix
 COPY files/noalbs.config.json /app/config.json
+COPY file/.env /app/.env
 
 RUN set -xe; \
     ldconfig; \
