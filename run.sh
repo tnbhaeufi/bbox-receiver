@@ -1,6 +1,7 @@
 #!/bin/bash
 
 [ ! -f $PWD/config.json ] && echo "config.json missing! (see config.json.example)" && exit 1
+[ ! -f $PWD/.env ] && echo ".env missing! (see env.example)" && exit 1
 
 docker build . -t belabox-receiver
 docker run --rm -it --name belabox-receiver \
